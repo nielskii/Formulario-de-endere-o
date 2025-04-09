@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Endereço</title>
+    <link rel="shortcut icon" href="./img/logo_correio.ico" type="image/x-icon">
+    <style>
+        body {
+            box-sizing: content-box;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .header{
+            text-align: center;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            width:500px;
+        }
+        .form>form>label,input{
+            display: block;   
+        }
+        fieldset{
+            border-radius: 8px;
+        }
+        legend {
+            padding: 20px 2px;
+            font-size: 20px;
+            text-align: left;
+
+        }
+        input{
+            width: 95%;
+            border-radius: 8px;
+            height: 35px;
+            outline: 0;
+            border: 0;
+            background-color:#d9d9d9;
+            padding-left: 15px;
+            margin: 3px;
+        }
+        button{
+            margin-top: 10px;
+            width: 100%;
+            height: 35px;
+            border-radius: 8px;
+            border: 0;
+            outline: 0;
+            background-color: #024873;
+            color: white;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="./img/correio.png" alt="logo correio">
+    </div>
+    <div class="container">
+        <div class="form">
+            <form action="index.html" method="get">
+                <fieldset>
+                    <legend>Dados para o Endereço</legend>
+                    <label for="CEP"><span>CEP:</span></label>
+                    <input type="text" placeholder="Ex: 22020-002" required>
+                    <label for="LOGRADOURO"><span>Logradouro</span></label>
+                    <input type="text" name="logradouro" placeholder="Ex: Avenida Nossa Senhora Copacabana">
+                    <label for="BAIRRO"><span>Bairro:</span></label>
+                    <input type="text" name="bairro" placeholder="Ex: Copacabana" >
+                    <label for="CIDADE"><span>Cidade:</span></label>
+                    <input type="text" name="cidade" placeholder="Ex: Rio de Janeiro">
+                    <label for="REGIAO"><span>Região:</span></label>
+                    <input type="text" name="regiao" placeholder="Ex: Sudeste">
+                    <label for="Estado"><span>Estado:</span></label>
+                    <input type="text" name="estado" placeholder="Ex: Rio de Janeiro">
+                    <button type="submit">Buscar</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
