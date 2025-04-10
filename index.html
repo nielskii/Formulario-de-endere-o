@@ -57,6 +57,9 @@
             color: white;
             font-size: 15px;
         }
+        button:hover{
+            background-color: #049DD9;
+        }
     </style>
 </head>
 <body>
@@ -65,25 +68,61 @@
     </div>
     <div class="container">
         <div class="form">
-            <form action="index.html" method="get">
+            <form action="index.html" method="get" autocomplete="off">
                 <fieldset>
                     <legend>Dados para o Endereço</legend>
                     <label for="CEP"><span>CEP:</span></label>
-                    <input type="text" placeholder="Ex: 22020-002" required>
+                    <input id="cep" type="text" placeholder="Ex: 22020-002" required>
                     <label for="LOGRADOURO"><span>Logradouro</span></label>
-                    <input type="text" name="logradouro" placeholder="Ex: Avenida Nossa Senhora Copacabana">
+                    <input id="logradouro" type="text" name="logradouro" placeholder="Ex: Avenida Nossa Senhora Copacabana">
                     <label for="BAIRRO"><span>Bairro:</span></label>
-                    <input type="text" name="bairro" placeholder="Ex: Copacabana" >
+                    <input id="bairro" type="text" name="bairro" placeholder="Ex: Copacabana" >
                     <label for="CIDADE"><span>Cidade:</span></label>
-                    <input type="text" name="cidade" placeholder="Ex: Rio de Janeiro">
+                    <input id="cidade" type="text" name="cidade" placeholder="Ex: Rio de Janeiro">
                     <label for="REGIAO"><span>Região:</span></label>
-                    <input type="text" name="regiao" placeholder="Ex: Sudeste">
+                    <input id="regiao" type="text" name="regiao" placeholder="Ex: Sudeste">
                     <label for="Estado"><span>Estado:</span></label>
-                    <input type="text" name="estado" placeholder="Ex: Rio de Janeiro">
-                    <button type="submit">Buscar</button>
+                    <input id="estado" type="text" name="estado" placeholder="Ex: Rio de Janeiro">
+                    <button type="submit" onclick="buscarCep(event)">Buscar</button>
                 </fieldset>
             </form>
         </div>
     </div>
+
+    <script>
+         function Alert_CEP(){
+            document.querySelector('button[type="submit"]').addEventListener('click',function(event){
+                event.preventDefault();
+                const cepValor = document.getElementById('cep').value;
+                window.alert('O CEP informado é: ' + cepValor);
+            });
+        }
+        Alert_CEP();
+        function buscarCep(event){
+            event.preventDefault();
+            let cep = document.querySelector('#cep').value;
+            let url = `http://viacep.com.br/ws/${cep}/json/`;
+            fetch(url)
+            .then(function(response){
+                return response.json()
+                })
+            .then(function(data){
+                console.log("Dados recebidos:",data)
+                preenchimentoCep(data)
+            })
+            .catch(function(error){
+                console.error("Erro ao buscar o CEP: ",error)
+            })
+            }
+        
+        function preenchimentoCep(dados){
+            document.querySelector('input[name="logradouro"]').value = dados.logradouro || ' ';
+            document.querySelector('input[name="bairro"]').value = dados.bairro || ' ';
+            document.querySelector('input[name="cidade"]').value = dados.localidade || ' ';
+            document.querySelector('input[name="regiao"]').value = dados.regiao || ' ';
+            document.querySelector('input[name="estado"]').value = dados.uf || ' ';
+
+        }
+    </script>
 </body>
 </html>
