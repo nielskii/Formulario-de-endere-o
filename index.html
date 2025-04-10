@@ -8,31 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <img src="./img/correio.png" alt="logo correio">
-    </div>
-    <div class="container">
-        <div class="form">
-            <form action="index.html" method="get" autocomplete="off">
-                <fieldset>
-                    <legend>Dados para o Endereço</legend>
-                    <label for="cep"><span>CEP:</span></label>
-                    <input id="cep" type="text" placeholder="Ex: 22020-002" required>
-                    <label for="logradouro"><span>Logradouro</span></label>
-                    <input id="logradouro" type="text" name="logradouro" placeholder="Ex: Avenida Nossa Senhora Copacabana">
-                    <label for="bairro"><span>Bairro:</span></label>
-                    <input id="bairro" type="text" name="bairro" placeholder="Ex: Copacabana" >
-                    <label for="cidade"><span>Cidade:</span></label>
-                    <input id="cidade" type="text" name="cidade" placeholder="Ex: Rio de Janeiro">
-                    <label for="regiao"><span>Região:</span></label>
-                    <input id="regiao" type="text" name="regiao" placeholder="Ex: Sudeste">
-                    <label for="estado"><span>Estado:</span></label>
-                    <input id="estado" type="text" name="estado" placeholder="Ex: Rio de Janeiro">
-                    <button type="submit" onclick="buscarCep(event)">Buscar</button>
-                </fieldset>
-            </form>
+        <div class="header">
+            <img src="./img/correio.png" alt="logo correio">
         </div>
-    </div>
+        <div class="container">
+            <div class="form">
+                <form action="index.html" method="get" autocomplete="off">
+                    <fieldset>
+                        <legend>Dados para o Endereço</legend>
+                        <label for="cep"><span>CEP:</span></label>
+                        <input id="cep" type="text" placeholder="Ex: 22020-002" required>
+                        <label for="logradouro"><span>Logradouro</span></label>
+                        <input id="logradouro" type="text" name="logradouro" placeholder="Ex: Avenida Nossa Senhora Copacabana">
+                        <label for="bairro"><span>Bairro:</span></label>
+                        <input id="bairro" type="text" name="bairro" placeholder="Ex: Copacabana" >
+                        <label for="cidade"><span>Cidade:</span></label>
+                        <input id="cidade" type="text" name="cidade" placeholder="Ex: Rio de Janeiro">
+                        <label for="regiao"><span>Região:</span></label>
+                        <input id="regiao" type="text" name="regiao" placeholder="Ex: Sudeste">
+                        <label for="estado"><span>Estado:</span></label>
+                        <input id="estado" type="text" name="estado" placeholder="Ex: Rio de Janeiro">
+                        <button type="submit" onclick="buscarCep(event)">Buscar</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
     <script src="./script.Js" defer></script>
 </body>
 </html>
