@@ -9,7 +9,7 @@ Alert_CEP();
 function buscarCep(event){
     event.preventDefault();
     let cep = document.querySelector('#cep').value;
-    let url = `http://viacep.com.br/ws/${cep}/json/`;
+    let url = `https://viacep.com.br/ws/${cep}/json/`;
     fetch(url)
     .then(function(response){
         return response.json()
@@ -31,3 +31,4 @@ function preenchimentoCep(dados){
     document.querySelector('input[name="estado"]').value = dados.uf || ' ';
 
 }
+window.buscarCep = buscarCep;
